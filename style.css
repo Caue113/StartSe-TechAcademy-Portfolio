@@ -1,0 +1,439 @@
+/* Importing Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,200;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+
+/* Global Organization */
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+    font-family: 'Kdam Thmor Pro','Poppins', 'Times New Roman', Times, serif ;
+    scroll-behavior: smooth;
+}
+
+a{
+    color: #b826bd;
+    text-decoration: none;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+p {
+    font-size: 1.4rem;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    font-weight: 200;
+    letter-spacing: 0.05rem;
+}
+
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section-title {
+    font-size: 4rem;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-align: center;
+}
+
+
+
+
+/* Seção de apresentação */
+
+#presentation{
+    background-image: url(./background_Unity.png);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+}
+#presentation h1{
+    display: block;
+    width: fit-content;
+    font-size: 5rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1.5s;
+}
+#presentation h1:nth-child(1){ 
+    animation-delay: .8s;
+}
+#presentation h1:nth-child(2){
+    animation-delay: 1.8s;
+}
+#presentation h1:nth-child(3){
+    animation: text_reveal_name .5s ease forwards;
+    animation-delay: 2.8s;
+}
+
+#presentation h1 span{
+    position: absolute;
+    top: 0;
+    left:0;
+    height: 100%;
+    width: 0%;
+    animation: text_reveal_box 1s ease;
+    animation-delay: .5s;
+    background-color: #4237dd;
+}
+
+/* Specific animation for 1st H1*/
+#presentation h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+
+/* Specific animation for 2nd H1*/
+#presentation h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+
+/* Specific animation for 3rd H1*/
+#presentation h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+
+
+
+#presentation .cta{
+    display: inline-block;
+    padding: 10px 30px;
+    color: #cf2a6a;
+    background-color: transparent;
+    border: 2px solid #cf2a6a;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 20px;
+    transition: .5s ease;
+    transition-property: background-color, color;
+
+}
+#presentation .cta:hover{
+    color: white;
+    font-weight: 500;
+    background-color: #cf2a6a;
+}
+
+
+#presentation::after{
+    content: '';
+    position: absolute;
+    left:0;
+    top: 0;
+    height:100%;
+    width: 100%;
+    background-color:black;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+
+
+
+
+/* Seção de Portifólio */
+
+#portfolio .portfolio{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+#portfolio .portfolio-header h1{
+    margin-bottom: 50px;
+}
+#portfolio .all-projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#portfolio .project-item{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+
+    
+}
+
+#portfolio .project-info {
+    padding: 30px;
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(60deg, #5a10b5 0%, #002349 100%);
+    color: white;
+}
+
+#portfolio .project-info h2{
+    font-size: 4.5rem;
+    font-weight: 500;
+}
+
+#portfolio .project-info h3{
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+#portfolio .project-info details
+{
+    font-size: 2.0rem;
+
+}
+
+#portfolio .project-info details a
+{
+    font-size: 1.4rem;
+    color: #b826bd;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#portfolio .project-info details a:nth-of-type(1):hover 
+{  
+    animation: github_hover 0.3s linear forwards;
+}
+
+#portfolio .project-info details a:nth-of-type(2):hover 
+{  
+    animation: itchio_hover 0.3s linear forwards;
+}
+#portfolio .project-info details a:nth-of-type(3):hover 
+{  
+    animation: documentation_hover 0.3s linear forwards;
+}
+
+
+
+
+#portfolio .project-img {
+    flex-basis: 50%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+#portfolio .project-img:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    opacity: 0.7;
+}
+#portfolio .project-img img{
+    transition: 0.8s ease transform;
+}
+#portfolio .project-item .project-img:hover img{
+    transform: scale(1.3);
+}
+
+
+
+#portfolio .project-video
+{
+    flex-basis: 50%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/*Seção Footer*/
+
+
+#footer
+{
+    height: auto;
+    background-color: #292929;
+    
+
+    text-align: right;
+    flex-direction: column;
+
+}
+
+#footer h2
+{
+    font-size: 2rem;
+    color:white;
+
+    margin: 2rem;
+    padding-top: 1rem;
+}
+#footer a
+{
+    font-size: 1.4rem;
+
+    margin: 1rem;
+
+    display: inline-block;
+    flex-direction: column;
+
+}
+
+#footer a.email_hover:hover
+{
+    animation: email_hover 0.3s linear forwards;
+}
+
+#footer a.itchio_hover:hover
+{
+    animation: itchio_hover 0.3s linear forwards;
+}
+
+#footer a.twitter_hover:hover
+{
+    animation: twitter_hover 0.3s linear forwards;
+}
+
+#footer a.discord_hover:hover
+{
+    animation: discord_hover 0.3s linear forwards;
+}
+
+#footer a.linkedin_hover:hover
+{
+    animation: linkedin_hover 0.3s linear forwards;
+}
+
+
+
+
+
+
+/* Keyframes */
+
+@keyframes text_reveal{
+    100%{
+        color: white;
+    }
+}
+@keyframes text_reveal_name{
+    100%{
+        color: #cf2a6a;
+        font-weight: 500px;
+    }
+}
+
+@keyframes text_reveal_box{
+    50%{
+        width:100%;
+        left:0;
+    }
+    100%{
+        width: 0;
+        left:100%
+    }
+}
+
+@keyframes waiting_input_bar{
+    50%{color: #cf2a6a00;}
+    100%{color: #cf2a6aFF;}
+}
+
+/*Hovers*/
+
+@keyframes github_hover
+{
+    100% {color: #292929;}
+
+}
+
+@keyframes itchio_hover
+{
+    100% {color: #cf2a6a;}
+
+}
+
+@keyframes email_hover
+{
+    100% {color: #ebebeb;}
+
+}
+
+@keyframes discord_hover
+{
+    100% {color: #4237dd;}
+
+}
+
+@keyframes twitter_hover
+{
+    100% {color: #4dbddf;}
+
+}
+
+@keyframes linkedin_hover 
+{
+    100% {color: #2a8cc5;}
+}
+
+@keyframes documentation_hover
+{
+    100% {color: #7c7c7c;}
+
+}
+
+
+
+
+
+
+
+/* Media Query */
+@media only screen and (min-width: 768px) {
+    #portfolio .project-item {
+        flex-direction: row;
+        height: 400px;
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+
+        margin: 20px;
+    }
+    #portfolio .all-projects .project-info{
+        height: 100%
+    }
+    #portfolio .all-projects .project-img{
+        height: 100%
+    }
+    #portfolio .project-item:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+
+}
