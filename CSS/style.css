@@ -59,7 +59,7 @@ p {
 /* Seção de apresentação */
 
 #presentation{
-    background-image: url(./background_Unity.png);
+    background-image: url(/Images/background_Unity.png);
     background-size: cover;
     background-position: top center;
     position: relative;
@@ -85,7 +85,7 @@ p {
     animation-delay: 2.8s;
 }
 
-#presentation h1 span{
+#presentation h1 span:nth-of-type(1){
     position: absolute;
     top: 0;
     left:0;
@@ -111,6 +111,12 @@ p {
     animation-delay: 2.5s;
 }
 
+#presentation span.waiting_input_bar
+{    
+    animation: waiting_input_bar 0.9s 4s infinite normal;
+}
+
+
 
 
 #presentation .cta{
@@ -129,8 +135,11 @@ p {
 }
 #presentation .cta:hover{
     color: white;
+    background-color: #4237dd;
+    border-color: #4237dd;
+    
     font-weight: 500;
-    background-color: #cf2a6a;
+    
 }
 
 
@@ -177,8 +186,6 @@ p {
     margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;
-
-    
 }
 
 #portfolio .project-info {
@@ -192,6 +199,7 @@ p {
     background-image: linear-gradient(60deg, #5a10b5 0%, #002349 100%);
     color: white;
 }
+
 
 #portfolio .project-info h2{
     font-size: 4.5rem;
@@ -361,8 +369,15 @@ p {
 }
 
 @keyframes waiting_input_bar{
-    50%{color: #cf2a6a00;}
-    100%{color: #cf2a6aFF;}
+    50%
+    {
+        display: none;
+        color: #cf2a6a00;
+    }
+    100%{
+        display: inherit;
+        color: #cf2a6aFF;
+    }
 }
 
 /*Hovers*/
